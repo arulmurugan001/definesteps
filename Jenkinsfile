@@ -30,6 +30,12 @@ pipeline {
     }
 
     post {
+        success {
+            echo 'Build completed successfully file created by Arul murugan.'
+        }
+        failure {
+            echo 'Build failed!'
+        }
         always {
             junit '**/target/surefire-reports/*.xml'
             archiveArtifacts '**/target/*.jar'
